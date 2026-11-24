@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VisitNote",
+  "description": "Structured note extracted from a primary-care visit transcript. Every field is required; use the explicit 'not mentioned' values instead of guessing.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "chief_complaint",
+    "symptoms",
+    "medications",
+    "allergies",
+    "tests_ordered",
+    "referrals",
+    "follow_up"
+  ],
+  "properties": {
+    "chief_complaint": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Main reason for the visit in a few words, or null if not stated."
+    },
+    "symptoms": {
+      "type": "array",
+      "description": "All symptoms discussed, including the ones behind the main complaint (e.g. 'cough' for a cough visit) and ones the patient explicitly denies, with status 'denied'.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "present",
+              "denied"
+            ]
+          }
+        }
+      }
+    },
+    "medications": {
+      "type": "array",
+      "description": "Medications discussed for this patient, with what the clinician decided.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "dose",
+          "action"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "dose": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Dose as stated, e.g. '500 mg twice daily'. Null if no dose was said."
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "started",
+              "continued",
+              "changed",
+              "stopped"
+            ]
+          }
+        }
+      }
+    },
+    "allergies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "items"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "listed",
+            "none_known",
+            "not_mentioned"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tests_ordered": {
+      "type": "array",
+      "description": "Lab work, imaging or other tests ordered at this visit.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "referrals": {
+      "type": "array",
+      "description": "Specialties or services the patient is referred to.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "follow_up": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "interval_days"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "scheduled",
+            "as_needed",
+            "not_mentioned"
+          ],
+          "description": "'scheduled', 'as_needed', or 'not_mentioned'."
+        },
+        "interval_days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Days stated with the follow-up (1 week = 7, 1 month = 30). For 'scheduled', days until the visit. For 'as_needed', the window the clinician gave ('come back if not better in a week' = 7). Null if no time was given."
+        }
+      },
+      "description": "When the patient should be seen again. 'scheduled': a visit is planned. 'as_needed': the patient comes back only if something happens (e.g. not improving, or worse)."
+    }
+  }
+}

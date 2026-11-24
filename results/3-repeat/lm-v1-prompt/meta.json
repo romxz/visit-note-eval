@@ -1,0 +1,13 @@
+{
+  "run": "lm-v1-prompt",
+  "provider": "lmstudio",
+  "model": "qwen/qwen3-14b",
+  "prompt": "v1",
+  "mode": "prompt",
+  "temperature": 0.0,
+  "max_attempts": 2,
+  "max_tokens": 2048,
+  "no_think": true,
+  "cases": 12,
+  "started": "20261124-165100"
+}

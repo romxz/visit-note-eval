@@ -1,0 +1,872 @@
+[
+  {
+    "id": "01-cough-viral",
+    "tags": [
+      "baseline",
+      "denied-symptom",
+      "conditional-follow-up-window"
+    ],
+    "transcript": "D: What brings you in today?\nP: I've had this cough for about five days now. Some fever the first couple of nights, maybe 38.\nD: Any shortness of breath?\nP: No, breathing's fine.\nD: Any allergies to medications?\nP: No, none that I know of.\nD: Your chest sounds clear. This looks viral, so antibiotics won't help. You can take acetaminophen 500 mg every six hours as needed for the fever. Plenty of fluids.\nP: Okay.\nD: If it's not getting better in a week or you get short of breath, come back and see us.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "cough"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "cough",
+          "status": "present"
+        },
+        {
+          "name": "fever",
+          "status": "present"
+        },
+        {
+          "name": "shortness of breath",
+          "aliases": [
+            "dyspnea",
+            "difficulty breathing",
+            "breathing difficulty"
+          ],
+          "status": "denied"
+        }
+      ],
+      "medications": [
+        {
+          "name": "acetaminophen",
+          "aliases": [
+            "tylenol",
+            "paracetamol"
+          ],
+          "dose": "500 mg every 6 hours as needed",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "none_known",
+        "items": []
+      },
+      "tests_ordered": [],
+      "referrals": [],
+      "follow_up": {
+        "status": "as_needed",
+        "interval_days": 7
+      }
+    }
+  },
+  {
+    "id": "02-bp-dose-change",
+    "tags": [
+      "changed-dose",
+      "continued",
+      "allergy-listed"
+    ],
+    "transcript": "D: So this is your blood pressure follow-up. Today you're 152 over 94.\nP: It's been high at home too.\nD: Any headaches or dizziness?\nP: No headaches. No dizziness either.\nD: You're on lisinopril 10 mg once a day and hydrochlorothiazide 12.5 mg. I want to increase the lisinopril to 20 mg once a day. Keep the hydrochlorothiazide the same.\nP: Sure.\nD: Still allergic to penicillin, right?\nP: Yes.\nD: I'll send you for a basic metabolic panel in about a week to check your kidneys and potassium, and I'll see you back in four weeks.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "blood pressure",
+            "hypertension",
+            "bp"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "headache",
+          "aliases": [
+            "headaches"
+          ],
+          "status": "denied"
+        },
+        {
+          "name": "dizziness",
+          "aliases": [
+            "dizzy",
+            "lightheadedness"
+          ],
+          "status": "denied"
+        }
+      ],
+      "medications": [
+        {
+          "name": "lisinopril",
+          "dose": "20 mg once daily",
+          "action": "changed"
+        },
+        {
+          "name": "hydrochlorothiazide",
+          "aliases": [
+            "hctz"
+          ],
+          "dose": "12.5 mg",
+          "action": "continued"
+        }
+      ],
+      "allergies": {
+        "status": "listed",
+        "items": [
+          {
+            "name": "penicillin"
+          }
+        ]
+      },
+      "tests_ordered": [
+        {
+          "name": "basic metabolic panel",
+          "aliases": [
+            "bmp",
+            "metabolic panel",
+            "kidney function",
+            "electrolytes",
+            "potassium"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 28
+      }
+    }
+  },
+  {
+    "id": "03-statin-switch",
+    "tags": [
+      "stopped",
+      "started",
+      "allergies-not-mentioned"
+    ],
+    "transcript": "P: My legs have been aching, especially my thighs. It started maybe a month after the new cholesterol pill.\nD: That's the atorvastatin 40 mg?\nP: Yes.\nD: Muscle aches can be a side effect. Let's stop the atorvastatin. In two weeks, if the aches are gone, start rosuvastatin 10 mg once daily instead. I'll also order a CK level, that's a muscle enzyme blood test.\nP: Okay.\nD: Let's check in again in six weeks.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "muscle",
+            "aches",
+            "ache",
+            "myalgia",
+            "leg"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "muscle aches",
+          "aliases": [
+            "muscle ache",
+            "myalgia",
+            "leg aches",
+            "leg pain",
+            "aching legs",
+            "muscle pain",
+            "thigh pain"
+          ],
+          "status": "present"
+        }
+      ],
+      "medications": [
+        {
+          "name": "atorvastatin",
+          "aliases": [
+            "lipitor"
+          ],
+          "dose": "40 mg",
+          "action": "stopped"
+        },
+        {
+          "name": "rosuvastatin",
+          "aliases": [
+            "crestor"
+          ],
+          "dose": "10 mg once daily",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "not_mentioned",
+        "items": []
+      },
+      "tests_ordered": [
+        {
+          "name": "creatine kinase",
+          "aliases": [
+            "ck",
+            "cpk",
+            "ck level",
+            "muscle enzyme"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 42
+      }
+    }
+  },
+  {
+    "id": "04-knee-spouse-distractor",
+    "tags": [
+      "distractor",
+      "referral",
+      "denied-symptom"
+    ],
+    "transcript": "D: Hi, and you brought your husband today.\nSpouse: Just for the ride. I'm here for my own refill next week anyway, my metformin.\nD: Ha, okay. So, the knee?\nP: Right knee. It started hurting after I went back to running two weeks ago.\nD: Any swelling?\nP: No swelling.\nD: Any allergies?\nP: None.\nD: Likely an overuse injury. Take ibuprofen 400 mg three times a day with food for one week. I'll get an X-ray of the right knee just to be safe, and I'm referring you to physiotherapy.\nP: Great.\nD: Come back if it isn't improving.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "knee"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "knee pain",
+          "aliases": [
+            "right knee pain",
+            "pain",
+            "knee"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "swelling",
+          "aliases": [
+            "knee swelling"
+          ],
+          "status": "denied"
+        }
+      ],
+      "medications": [
+        {
+          "name": "ibuprofen",
+          "aliases": [
+            "advil",
+            "motrin"
+          ],
+          "dose": "400 mg three times a day",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "none_known",
+        "items": []
+      },
+      "tests_ordered": [
+        {
+          "name": "knee x-ray",
+          "aliases": [
+            "x-ray",
+            "xray",
+            "radiograph"
+          ]
+        }
+      ],
+      "referrals": [
+        {
+          "name": "physiotherapy",
+          "aliases": [
+            "physical therapy",
+            "physio",
+            "pt"
+          ]
+        }
+      ],
+      "follow_up": {
+        "status": "as_needed",
+        "interval_days": null
+      }
+    }
+  },
+  {
+    "id": "05-chest-negations",
+    "tags": [
+      "many-denied",
+      "allergy-listed"
+    ],
+    "transcript": "P: I get this burning in my chest after meals, mostly at night.\nD: Any shortness of breath with it?\nP: No.\nD: Nausea? Sweating?\nP: No nausea, no sweating.\nD: Does it come on with exercise?\nP: No, only after eating.\nD: Sounds like reflux, but because it's your chest I want an ECG today. I'll start you on omeprazole 20 mg once daily before breakfast.\nP: I'm allergic to sulfa drugs, is that a problem?\nD: No, omeprazole is fine. Let's follow up in two weeks.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "chest",
+            "heartburn",
+            "reflux",
+            "burning"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "heartburn",
+          "aliases": [
+            "chest burning",
+            "burning in chest",
+            "burning chest",
+            "reflux",
+            "burning"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "shortness of breath",
+          "aliases": [
+            "dyspnea"
+          ],
+          "status": "denied"
+        },
+        {
+          "name": "nausea",
+          "status": "denied"
+        },
+        {
+          "name": "sweating",
+          "aliases": [
+            "diaphoresis"
+          ],
+          "status": "denied"
+        },
+        {
+          "name": "exertional chest pain",
+          "aliases": [
+            "pain with exercise",
+            "exertional symptoms",
+            "symptoms with exercise",
+            "exercise"
+          ],
+          "status": "denied",
+          "optional": true
+        }
+      ],
+      "medications": [
+        {
+          "name": "omeprazole",
+          "aliases": [
+            "prilosec",
+            "losec"
+          ],
+          "dose": "20 mg once daily",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "listed",
+        "items": [
+          {
+            "name": "sulfa",
+            "aliases": [
+              "sulfa drugs",
+              "sulfonamides",
+              "sulfonamide"
+            ]
+          }
+        ]
+      },
+      "tests_ordered": [
+        {
+          "name": "ecg",
+          "aliases": [
+            "ekg",
+            "electrocardiogram"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 14
+      }
+    }
+  },
+  {
+    "id": "06-asr-drug-names",
+    "tags": [
+      "asr-noise",
+      "continued",
+      "started"
+    ],
+    "transcript": "D: How's the sugar been?\nP: A bit high. I'm thirsty a lot.\nD: You're still taking the met forming 500 mg twice a day?\nP: Yes, every day.\nD: Good, keep that the same. I'm adding jar dance, 10 mg once in the morning. It helps lower the sugar and protects the heart and kidneys.\nP: Okay.\nD: We'll do an A one C today, and I'll see you in three months.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "diabetes",
+            "sugar",
+            "glucose",
+            "blood sugar"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "increased thirst",
+          "aliases": [
+            "thirst",
+            "thirsty",
+            "polydipsia",
+            "excessive thirst"
+          ],
+          "status": "present"
+        }
+      ],
+      "medications": [
+        {
+          "name": "metformin",
+          "aliases": [
+            "glucophage"
+          ],
+          "dose": "500 mg twice a day",
+          "action": "continued"
+        },
+        {
+          "name": "empagliflozin",
+          "aliases": [
+            "jardiance"
+          ],
+          "dose": "10 mg once daily",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "not_mentioned",
+        "items": []
+      },
+      "tests_ordered": [
+        {
+          "name": "hba1c",
+          "aliases": [
+            "a1c",
+            "hemoglobin a1c",
+            "glycated hemoglobin"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 90
+      }
+    }
+  },
+  {
+    "id": "07-nothing-to-record",
+    "tags": [
+      "mostly-empty",
+      "not-a-follow-up"
+    ],
+    "transcript": "P: I just need a note for work. I had the flu last week but I'm feeling much better.\nD: Any fever still?\nP: No, that's gone.\nD: Good. I'll write you a note saying you can return to work Monday.\nP: Thanks.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "note",
+            "work"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "fever",
+          "status": "denied"
+        }
+      ],
+      "medications": [],
+      "allergies": {
+        "status": "not_mentioned",
+        "items": []
+      },
+      "tests_ordered": [],
+      "referrals": [],
+      "follow_up": {
+        "status": "not_mentioned",
+        "interval_days": null
+      }
+    }
+  },
+  {
+    "id": "08-migraine-prior-test",
+    "tags": [
+      "history-not-order",
+      "referral"
+    ],
+    "transcript": "P: The headaches are still coming, about twice a week. Sometimes I feel sick to my stomach with them.\nD: Any changes in your vision?\nP: No.\nD: Your MRI from last month was normal, which is reassuring. Any allergies to medications?\nP: No.\nD: Let's try sumatriptan 50 mg at the start of a migraine. You can repeat once after two hours if needed. I'm also referring you to neurology.\nP: Okay.\nD: See you in three months.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "headache",
+            "migraine"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "headache",
+          "aliases": [
+            "headaches",
+            "migraine",
+            "migraines"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "nausea",
+          "aliases": [
+            "sick to stomach",
+            "feeling sick"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "vision changes",
+          "aliases": [
+            "visual changes",
+            "vision change",
+            "visual disturbance"
+          ],
+          "status": "denied"
+        }
+      ],
+      "medications": [
+        {
+          "name": "sumatriptan",
+          "aliases": [
+            "imitrex"
+          ],
+          "dose": "50 mg as needed",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "none_known",
+        "items": []
+      },
+      "tests_ordered": [],
+      "referrals": [
+        {
+          "name": "neurology",
+          "aliases": [
+            "neurologist"
+          ]
+        }
+      ],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 90
+      }
+    }
+  },
+  {
+    "id": "09-asthma-mixed-actions",
+    "tags": [
+      "changed-dose",
+      "stopped",
+      "continued",
+      "allergy-listed"
+    ],
+    "transcript": "P: I've been wheezing more, and I'm coughing at night.\nD: Which inhalers are you using?\nP: The blue one, salbutamol, two puffs when I need it. And the fluticasone 125, two puffs twice a day. Oh, and I stopped taking my vitamin D, I kept forgetting.\nD: That's fine, you can stay off the vitamin D. Let's increase the fluticasone to 250 micrograms, two puffs twice a day, and keep the salbutamol as needed.\nP: Okay.\nD: Anything you're allergic to?\nP: Just cats.\nD: I'll book spirometry, and let's follow up in six weeks.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "wheez",
+            "asthma",
+            "cough"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "wheezing",
+          "aliases": [
+            "wheeze"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "night cough",
+          "aliases": [
+            "nighttime cough",
+            "nocturnal cough",
+            "cough",
+            "coughing at night"
+          ],
+          "status": "present"
+        }
+      ],
+      "medications": [
+        {
+          "name": "fluticasone",
+          "aliases": [
+            "flovent"
+          ],
+          "dose": "250 mcg two puffs twice a day",
+          "action": "changed"
+        },
+        {
+          "name": "salbutamol",
+          "aliases": [
+            "albuterol",
+            "ventolin"
+          ],
+          "dose": "2 puffs as needed",
+          "action": "continued"
+        },
+        {
+          "name": "vitamin d",
+          "aliases": [
+            "vitamin d3",
+            "cholecalciferol"
+          ],
+          "dose": null,
+          "action": "stopped"
+        }
+      ],
+      "allergies": {
+        "status": "listed",
+        "items": [
+          {
+            "name": "cats",
+            "aliases": [
+              "cat",
+              "cat dander"
+            ]
+          }
+        ]
+      },
+      "tests_ordered": [
+        {
+          "name": "spirometry",
+          "aliases": [
+            "pulmonary function test",
+            "pft",
+            "lung function test"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 42
+      }
+    }
+  },
+  {
+    "id": "10-uti",
+    "tags": [
+      "many-denied",
+      "allergy-listed"
+    ],
+    "transcript": "P: It burns when I pee, and I'm going all the time.\nD: Any fever, or pain in your back?\nP: No fever. No back pain.\nD: Any drug allergies?\nP: Cipro gave me a rash once.\nD: Okay, we'll avoid that. I'll send a urine culture, and start nitrofurantoin 100 mg twice a day for five days. If you get a fever or back pain, come back right away.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "urin",
+            "pee",
+            "uti",
+            "burning"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "painful urination",
+          "aliases": [
+            "dysuria",
+            "burning urination",
+            "burning when urinating",
+            "burning",
+            "burning with urination"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "urinary frequency",
+          "aliases": [
+            "frequency",
+            "frequent urination",
+            "urinating frequently"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "fever",
+          "status": "denied"
+        },
+        {
+          "name": "back pain",
+          "aliases": [
+            "flank pain"
+          ],
+          "status": "denied"
+        }
+      ],
+      "medications": [
+        {
+          "name": "nitrofurantoin",
+          "aliases": [
+            "macrobid",
+            "macrodantin"
+          ],
+          "dose": "100 mg twice a day for 5 days",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "listed",
+        "items": [
+          {
+            "name": "ciprofloxacin",
+            "aliases": [
+              "cipro"
+            ]
+          }
+        ]
+      },
+      "tests_ordered": [
+        {
+          "name": "urine culture",
+          "aliases": [
+            "urine test",
+            "urinalysis",
+            "urine"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "as_needed",
+        "interval_days": null
+      }
+    }
+  },
+  {
+    "id": "11-physical-ozempic-distractor",
+    "tags": [
+      "distractor",
+      "no-symptoms",
+      "long-interval"
+    ],
+    "transcript": "D: So this is your annual physical. Any concerns?\nP: Not really. My friend is on Ozempic and lost a lot of weight. Should I be on that?\nD: It's not something I'd recommend for you right now. Your weight and sugars are in a healthy range.\nP: Okay, fair.\nD: You're on levothyroxine 75 micrograms every morning?\nP: Yes.\nD: Keep that going. I'll order a lipid panel, a CBC and a TSH. Allergies still none?\nP: None.\nD: Great, see you next year.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "physical",
+            "annual",
+            "checkup",
+            "check-up"
+          ]
+        ]
+      },
+      "symptoms": [],
+      "medications": [
+        {
+          "name": "levothyroxine",
+          "aliases": [
+            "synthroid",
+            "eltroxin"
+          ],
+          "dose": "75 mcg every morning",
+          "action": "continued"
+        }
+      ],
+      "allergies": {
+        "status": "none_known",
+        "items": []
+      },
+      "tests_ordered": [
+        {
+          "name": "lipid panel",
+          "aliases": [
+            "lipids",
+            "cholesterol"
+          ]
+        },
+        {
+          "name": "cbc",
+          "aliases": [
+            "complete blood count"
+          ]
+        },
+        {
+          "name": "tsh",
+          "aliases": [
+            "thyroid stimulating hormone",
+            "thyroid"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 365
+      }
+    }
+  },
+  {
+    "id": "12-rash-conditional-referral",
+    "tags": [
+      "conditional-referral",
+      "no-dose",
+      "conditional-follow-up-window"
+    ],
+    "transcript": "P: I've got this itchy rash on my forearm, it's been there about a week.\nD: Any new soaps or detergents?\nP: Actually yes, we switched detergent.\nD: It looks like contact dermatitis. Go back to your old detergent, and use the hydrocortisone cream I'm prescribing. If it isn't better in two weeks, call and I'll refer you to dermatology.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "rash"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "rash",
+          "aliases": [
+            "forearm rash",
+            "itchy rash",
+            "skin rash"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "itching",
+          "aliases": [
+            "itch",
+            "itchy",
+            "pruritus"
+          ],
+          "status": "present"
+        }
+      ],
+      "medications": [
+        {
+          "name": "hydrocortisone",
+          "aliases": [
+            "hydrocortisone cream"
+          ],
+          "dose": null,
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "not_mentioned",
+        "items": []
+      },
+      "tests_ordered": [],
+      "referrals": [],
+      "follow_up": {
+        "status": "as_needed",
+        "interval_days": 14
+      }
+    }
+  }
+]

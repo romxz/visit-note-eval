@@ -1,0 +1,14 @@
+{
+  "run": "lm-v1-heldout",
+  "provider": "lmstudio",
+  "model": "qwen/qwen3-14b",
+  "prompt": "v1",
+  "mode": "native",
+  "temperature": 0.0,
+  "max_attempts": 2,
+  "max_tokens": 2048,
+  "no_think": true,
+  "cases": 4,
+  "started": "20261124-171447",
+  "rescored": "20261124-222038"
+}

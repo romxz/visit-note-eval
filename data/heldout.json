@@ -1,0 +1,303 @@
+[
+  {
+    "id": "H1-asr-bp-meds",
+    "tags": [
+      "heldout",
+      "asr-noise",
+      "continued",
+      "started",
+      "key-fix-after-run: accept one combined test or two separate"
+    ],
+    "transcript": "D: Your blood pressure is still running high, 148 over 92.\nP: I've been taking the amlo dipping every day, the 5 mg.\nD: Good, keep taking the amlo dipine 5 mg. I'm going to add loss art an, 50 mg once a day.\nP: Okay. Any side effects?\nD: Some people get a bit dizzy at first. Have you had any dizziness so far?\nP: No.\nD: Any allergies to medications?\nP: None.\nD: We'll check your kidney function and potassium in two weeks, and I'll see you in six weeks.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "blood pressure",
+            "hypertension",
+            "bp"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "dizziness",
+          "aliases": [
+            "dizzy",
+            "lightheadedness"
+          ],
+          "status": "denied"
+        }
+      ],
+      "medications": [
+        {
+          "name": "amlodipine",
+          "aliases": [
+            "norvasc"
+          ],
+          "dose": "5 mg",
+          "action": "continued"
+        },
+        {
+          "name": "losartan",
+          "aliases": [
+            "cozaar"
+          ],
+          "dose": "50 mg once a day",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "none_known",
+        "items": []
+      },
+      "tests_ordered": [
+        {
+          "name": "kidney function",
+          "aliases": [
+            "creatinine",
+            "renal function",
+            "basic metabolic panel",
+            "bmp",
+            "electrolytes",
+            "kidney function and potassium"
+          ]
+        },
+        {
+          "name": "potassium",
+          "aliases": [
+            "potassium level",
+            "serum potassium"
+          ],
+          "optional": true
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 42
+      }
+    }
+  },
+  {
+    "id": "H2-shoulder-conditional",
+    "tags": [
+      "heldout",
+      "conditional-referral",
+      "conditional-follow-up-window",
+      "allergy-listed"
+    ],
+    "transcript": "P: My shoulder's been sore for two weeks. I can't lift my arm above my head.\nD: Any numbness or tingling down the arm?\nP: No, none.\nD: Any drug allergies?\nP: Codeine makes me throw up.\nD: Okay. This looks like a rotator cuff strain. Take naproxen 500 mg twice a day with food. If you still can't lift your arm in three weeks, let me know and we'll get you in with orthopedics.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "shoulder"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "shoulder pain",
+          "aliases": [
+            "sore shoulder",
+            "shoulder soreness",
+            "shoulder"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "limited range of motion",
+          "aliases": [
+            "cannot lift arm",
+            "can't lift arm",
+            "unable to lift arm",
+            "difficulty lifting arm",
+            "reduced range of motion",
+            "lift arm",
+            "lifting arm",
+            "arm weakness"
+          ],
+          "status": "present"
+        },
+        {
+          "name": "numbness",
+          "aliases": [
+            "numbness or tingling"
+          ],
+          "status": "denied"
+        },
+        {
+          "name": "tingling",
+          "status": "denied",
+          "optional": true
+        }
+      ],
+      "medications": [
+        {
+          "name": "naproxen",
+          "aliases": [
+            "aleve",
+            "naprosyn"
+          ],
+          "dose": "500 mg twice a day",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "listed",
+        "items": [
+          {
+            "name": "codeine"
+          }
+        ]
+      },
+      "tests_ordered": [],
+      "referrals": [],
+      "follow_up": {
+        "status": "as_needed",
+        "interval_days": 21
+      }
+    }
+  },
+  {
+    "id": "H3-lab-review-distractor",
+    "tags": [
+      "heldout",
+      "distractor",
+      "non-symptom-reason",
+      "no-symptoms"
+    ],
+    "transcript": "D: I asked you in to go over your blood work.\nP: My daughter came with me, she's just picking up her amoxicillin after.\nD: No problem. Your cholesterol came back a little high. I'd like to start you on rosuvastatin 5 mg at bedtime.\nP: Alright. Anything else?\nD: Your sugar and thyroid were normal. We'll repeat the cholesterol in three months, and I'll see you then.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "blood work",
+            "lab",
+            "results",
+            "bloodwork",
+            "cholesterol"
+          ]
+        ]
+      },
+      "symptoms": [],
+      "medications": [
+        {
+          "name": "rosuvastatin",
+          "aliases": [
+            "crestor"
+          ],
+          "dose": "5 mg at bedtime",
+          "action": "started"
+        }
+      ],
+      "allergies": {
+        "status": "not_mentioned",
+        "items": []
+      },
+      "tests_ordered": [
+        {
+          "name": "lipid panel",
+          "aliases": [
+            "cholesterol",
+            "lipids",
+            "repeat cholesterol",
+            "cholesterol test"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 90
+      }
+    }
+  },
+  {
+    "id": "H4-gout-mixed",
+    "tags": [
+      "heldout",
+      "stopped",
+      "continued",
+      "history-not-order",
+      "patient-stated-dose"
+    ],
+    "transcript": "P: The gout's been quiet. I'm still on the allopurinol, 300 a day.\nD: Good, stay on that. Any joint swelling lately?\nP: No.\nD: Your uric acid last month was right on target. I see you've been taking ibuprofen for your back. I'd like you to stop that, it's hard on the kidneys. Use acetaminophen instead if you need something.\nP: Okay.\nD: I'll order a creatinine to check your kidneys, and see you in three months.",
+    "expected": {
+      "chief_complaint": {
+        "keywords": [
+          [
+            "gout"
+          ]
+        ]
+      },
+      "symptoms": [
+        {
+          "name": "joint swelling",
+          "aliases": [
+            "swelling",
+            "swollen joints"
+          ],
+          "status": "denied"
+        },
+        {
+          "name": "back pain",
+          "aliases": [
+            "back"
+          ],
+          "status": "present",
+          "optional": true
+        }
+      ],
+      "medications": [
+        {
+          "name": "allopurinol",
+          "aliases": [
+            "zyloprim"
+          ],
+          "dose": "300 mg daily",
+          "action": "continued"
+        },
+        {
+          "name": "ibuprofen",
+          "aliases": [
+            "advil",
+            "motrin"
+          ],
+          "dose": null,
+          "action": "stopped"
+        },
+        {
+          "name": "acetaminophen",
+          "aliases": [
+            "tylenol",
+            "paracetamol"
+          ],
+          "dose": null,
+          "action": "started",
+          "optional": true
+        }
+      ],
+      "allergies": {
+        "status": "not_mentioned",
+        "items": []
+      },
+      "tests_ordered": [
+        {
+          "name": "creatinine",
+          "aliases": [
+            "kidney function",
+            "renal function",
+            "serum creatinine"
+          ]
+        }
+      ],
+      "referrals": [],
+      "follow_up": {
+        "status": "scheduled",
+        "interval_days": 90
+      }
+    }
+  }
+]

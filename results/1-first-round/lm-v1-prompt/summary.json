@@ -1,0 +1,20 @@
+{
+  "chief_complaint": 0.9166666666666666,
+  "symptoms": 0.9166666666666666,
+  "symptom_status": 1.0,
+  "medications": 0.9583333333333334,
+  "med_action": 1.0,
+  "med_dose": 0.7575757575757576,
+  "allergy_status": 1.0,
+  "allergy_items": 1.0,
+  "tests_ordered": 1.0,
+  "referrals": 0.9166666666666666,
+  "follow_up_status": 1.0,
+  "follow_up_interval": 1.0,
+  "overall": 0.9540193602693603,
+  "schema_valid": 1.0,
+  "first_try_valid": 1.0,
+  "unsupported_items": 2,
+  "critical_errors": 2,
+  "mean_latency_s": 15.023
+}

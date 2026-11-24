@@ -1,0 +1,13 @@
+{
+  "run": "lm-v3-main",
+  "provider": "lmstudio",
+  "model": "qwen/qwen3-14b",
+  "prompt": "v3",
+  "mode": "native",
+  "temperature": 0.0,
+  "max_attempts": 2,
+  "max_tokens": 2048,
+  "no_think": true,
+  "cases": 12,
+  "started": "20261124-171123"
+}
